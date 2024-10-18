@@ -177,7 +177,7 @@ fill(r, g, b);
     shapes.forEach(shape => {
       push();
       translate(shape.x, shape.y);
-      scale(size);
+      scale(size*0.5);
 
       if (selectedShape === 'heart') {
           drawHeart(); // Dibuixa el cor
