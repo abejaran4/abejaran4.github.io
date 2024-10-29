@@ -465,11 +465,7 @@ bezierVertex(535, 81.1875, 535, 73.1875, 540, 66.1875);
 endShape(CLOSE);
 
 
-   for (let i = 0; i < colors.length; i++) {
-       stroke(colors[i]);
-       noFill();
-       arc(0, 0, radius + i * 10, radius + i * 10, PI, TWO_PI); // Dibuixar arcs concèntrics amb diferents colors
-   }
+  
 }
 
 function handleFileUpload(event) {
