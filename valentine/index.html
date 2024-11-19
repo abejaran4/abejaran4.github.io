@@ -81,13 +81,15 @@
     <h1>Màquina Jean Valentine</h1>
     <p>Durant la <a href="https://setmanaciencia.fundaciorecerca.cat/frontend/detall_activitat.asp?ID=6895">Setmana de la Ciència de 2024 </a> organitzada pel Departament d'Universitats s'ha celebrat el centenari del naixement de Jean Valentine.</p>
  <p><a href="https://en.wikipedia.org/wiki/Jean_Valentine">Jean Valentine</a> va treballar durant la Segona Guerra Mundial creant una màquina per desxifrar els missatges de guerra alemanys</p> 
-      <a href="https://agora.xtec.cat/ies-pompeu-fabra-martorell/">l'Institut Pompeu Fabra</a></p>
-    <p>A continuació veuràs un llistat amb diferents projectes que farem durant el curs:</p>
-    <ul>
-        <li>Creació d'una obra d'art geomètrica interactiva que reaccioni a la meva veu a través d'un micròfon i a diferents tecles del teclat, al ratolí, que faci moviments repetitius amb sin i cos, moviments aleatoris amb random... Utilitzarem p5.js.</li>
-        <li>Aliments ecològics i convencionals amb C++.</li>
-        <li>Contaminació atmosfèrica d'una ciutat catalana amb R.</li> 
-    </ul>
+  <h1> Com funciona la màquina?</h1>   
+   <ol>
+       <li> S'ha de tenir el missatge a codificar i escriure a la web:<a href="https://pompeu.neocities.org/enigma/"> Jean Valentine</a></li>
+       <li> El missatge passa lletra a lletra per tres rotors i un reflector, pasa moltes vegades, concretament cada lletra passa pels tres rotors d'esquerra a dreta pel reflector i després de dreta a esquerra</li>
+       <li> Per dintre de cada rotor, per exemple si tens la lletra d, en el primer rotor hauriem de mirar la quarta lletra i si donés una y hauriem de mirar en el següent rotor la lletra 25 de l'abecedari</li>
+       <li> Aquest procés es repeteix el número de vegades que és igual a número de lltres multiplicat per 7 ( tres rotors per dos pasades i un reflector).</li>
+       <li> Per exemple, un missatge de 20 lletres tindria 140 transformacions d'abecedari. </li>
+   </ol>
+    
 </div>
 
 <!-- Scripts necessaris -->
