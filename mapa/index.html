@@ -114,7 +114,7 @@ function actualitzaHeatmap() {
 
   heatLayer = L.heatLayer(
     dadesSeleccionades.map(punt => [punt.lat, punt.lng, escalaValor(punt.valor, maxValor)]),
-    { radius: 50, blur: 40, maxZoom: 12, gradient: generaGradient() }
+    { radius: 100, blur: 40, maxZoom: 12, gradient: generaGradient() }
   ).addTo(map);
   actualitzaLlegenda(contaminant, maxValor);
 }
