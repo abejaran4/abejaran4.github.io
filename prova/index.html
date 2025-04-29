@@ -130,7 +130,7 @@ const faceOptions = {
 withLandmarks: true, // Detecta els punts clau de la cara (ulls, nas, boca, etc.) withExpressions: true, // Detecta les expressions facials (felicitat, tristesa, etc.)
 withDescriptors: false, // No sol licita descriptors facials (informació per reconèixer cares)
 minConfidence: 0.5 // Nivell mínim de certesa per considerar una detecció valida
-｝；
+｝;
 // Inicializa el model de detecció facial amb el vídeo i les opcions definides
 faceapi = ml5.faceApi(video, faceOptions, faceReady);
 }
