@@ -80,29 +80,6 @@ margin-bottom: 10px;
 </head>
 }
 
-.loader {
-width: 50px;
-height: 50px;
-border: 6px solid #3498db;
-/* Marge de 6 píxels de grosor amb color blau (part de la vora) */
-border-top: 6px solid transparent;
-/* La part superior és transparent per fer l'efecte giratori */
-border-radius: 50%;
-/*Fa el loader circular */
-animation: spin 1s linear infinite;
-/* Aplica una animació que fa girar l'element indefinidament */
-margin-bottom: 10px;
-}
-
-/* Declaració de la keyframe de l'animació per girar l'element loader */
-@keyframes spin {
-0% { transform:rotate(0deg); }
-100% { transform: rotate(360deg); }
-}
-/* Fi de l'estil CSS */
-</style>
-</head>
-
 <body>
 <!--Cos del document: aquí es col·loca el contingut visible a la pàgina-->
  
@@ -125,7 +102,7 @@ let detections=[];
 //Array on es guardaran els resultats (detections) que ens proporciona el model facial
 
 let video
-//Variable que gyardarà la captura del vídeo de la càmera
+//Variable que guardarà la captura del vídeo de la càmera
 
 let modelsMostrats=false;
 //Variable booleana per controlar si ja s'ha amagat la pantalla de càrrega
@@ -156,16 +133,16 @@ withDescriptors: false, // No sol licita descriptors facials (informació per re
 minConfidence: 0.5 // Nivell mínim de certesa per considerar una detecció valida
 ｝；
 // Inicializa el model de detecció facial amb el vídeo i les opcions definides
-faceapi = ml5.faceApi(video, faceOptions, faceReady
+faceapi = ml5.faceApi(video, faceOptions, faceReady);
 }
 // Quan el model estigui preparat, es cridarà la funció faceReady
 // Funció que s'executa quan el model de detecció facial està llest
-function faceReadyO {
+function faceReady() {
 faceapi.detect(gotFaces);
 // Inicia la detecció facial cridant la funció gotFaces quan es completen les deteccions
 }
 function windowResized(){
-resizeCanvas(window Width, windowHeight); // Nova funció per adaptar el canvas
+resizeCanvas(windowWidth, windowHeight); // Nova funció per adaptar el canvas
 }
 // Funció que s'executa cada cop que ml5.js té les deteccions d'una cara function gotFaces(error, result){
 if (error) {
@@ -188,7 +165,7 @@ faceapi.detect(gotFaces);
 }
 
 // Funció draw de p5.js, s'executa moltes vegades per segon per actualitzar la pantalla
-function drawO {
+function draw() {
 // Es pinta el fons de color blanc cada vegada que es redibuixa el canvas
 background(255);
 
@@ -200,8 +177,7 @@ let intensity = 0;
 if (detections && detections.length > 0) {
 // Es recuperen les expressions facials de la primera detecció
 let expr = detections[0].expressions;
-// Es determina quina és l'expressió dominant (amb més probabilitat) comparant els
-valors
+// Es determina quina és l'expressió dominant (amb més probabilitat) comparant els valors
 dominant = Object.keys(expr).reduce((a, b) => expr[a] > expr[b] ? a : b);
 // També s'extreu la intensitat de l'expressió dominant
 intensity = expr[dominant];
@@ -211,7 +187,7 @@ intensity = expr[dominant];
 drawDifferentArt(dominant, intensity);
 
 // Dibuixa un text amb el nom de l'expressió facial a la part superior del canvas
-no Stroke;
+noStroke;
 fill(44, 169, 225);
 textSize(48);
 textAlign(CENTER, CENTER);
@@ -220,13 +196,12 @@ text("Expressió: " + dominant, width/2, 50);
 // "width/2" centra el text horizontalment i "50" és la coordenada vertical
 // Dibuixa una mini image de la cara a la part inferior dreta del canvas
 if (detections && detections.length > 0) {
-// Es fà servir la imatge del vídeo capturat per representar la cara image(video, width - mini Width - 20, height - miniHeight - 20, mini Width,
-miniHeight);
+// Es fà servir la imatge del vídeo capturat per representar la cara image(video, width - mini Width - 20, height - miniHeight - 20, mini Width,miniHeight);
 }
 }
 
 // Funció per dibuixar art geomètric en funció de l'expressió facial detectada function drawDifferentArt(dominant, intensity) /
-pusho;
+push();
 // Guarda l'estat actual de les transformacions grafiques
 
 translate(width/2, height/2);
@@ -235,7 +210,7 @@ translate(width/2, height/2);
 noFill():
 // Es desactiva el farcit (no es pinta amb color les formes interiors)
 
-stroke Weight(4);
+strokeWeight(4);
 // Defineix l'amplada del traç (línia de dibuix) en 4 píxels
 
 // Utilitza una estructura switch per triar el dibuix en funció del sentiment detectat
