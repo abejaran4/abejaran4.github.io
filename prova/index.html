@@ -153,7 +153,7 @@
       switch (dominant) {
         case 'happy':
           stroke(251,245,123)
-         beginShape();
+         beginShape();//caps
 curveVertex(415, 68.16666603088379);
 curveVertex(403, 72.16666603088379);
 curveVertex(388, 77.16666603088379);
@@ -214,6 +214,7 @@ curveVertex(458, 77.16666603088379);
 curveVertex(446, 72.16666603088379);
 curveVertex(429, 68.16666603088379);
 curveVertex(418, 68.16666603088379);
+          endShape(CLOSE);
           beginShape();
 curveVertex(160, 168.5);
 curveVertex(150, 174.5);
